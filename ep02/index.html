@@ -1,50 +1,72 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2화 · 겨자씨 만들기: 생애 첫 적금, 100일에 100만 원</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet"><style>
-:root{--bg:#FAF7F2;--card:#fff;--ink:#1F2933;--mut:#6B7280;--line:#E7E1D8;--acc:#D97706;--acc-soft:#FDE68A;--screen-bg:#EEF2FF;--screen-ink:#3730A3;--quote-bg:#FFFBEB;--quote-ink:#78350F}
-@media(prefers-color-scheme:dark){:root{--bg:#0F1216;--card:#171B21;--ink:#F3F4F6;--mut:#9CA3AF;--line:#2A3039;--acc:#F59E0B;--acc-soft:#7C5A0B;--screen-bg:#1E2540;--screen-ink:#A5B4FC;--quote-bg:#2A2410;--quote-ink:#FDE68A}}
+:root{
+  --g1:#7DD3C0;--g2:#3FB68B;--g3:#F2B233;--g4:#F0715A;
+  --grad:linear-gradient(90deg,var(--g1),var(--g2),var(--g3),var(--g4));
+  --bg:#FBF9F4;--card:#FFFFFF;--tile:#F4F1EA;--ink:#1E2229;--mut:#6F7681;--line:#E6E1D7;
+  --acc:#D9962A;--acc-ink:#8A5A00;--acc-soft:#FDE9B8;
+  --screen-bg:#E8F6F1;--screen-ink:#1F6B52;--quote-bg:#FFF6E3;--quote-ink:#7A4E00
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#141210;--card:#1C1916;--tile:#25211C;--ink:#F1EBE0;--mut:#9C948A;--line:#2E2923;
+  --acc:#E8B04B;--acc-ink:#F5D48A;--acc-soft:#5A4213;
+  --screen-bg:#1B2F29;--screen-ink:#8FD8BE;--quote-bg:#2E2616;--quote-ink:#F2D39A
+}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Gowun Dodum','Noto Sans KR',system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
 a{color:inherit}
-.wrap{max-width:600px;margin:0 auto;padding:28px 18px 80px}
-.eyebrow{font-size:12px;color:var(--mut);letter-spacing:.08em}
-h1{font-size:24px;margin:4px 0 6px;line-height:1.35}
-.sub{font-size:14px;color:var(--mut);margin:0 0 22px}
+.wrap{max-width:600px;margin:0 auto;padding:26px 18px 80px}
+.topline{height:4px;background:var(--grad);border-radius:999px;margin-bottom:22px}
+.head{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mut);letter-spacing:.04em}
+h1{font-size:28px;margin:8px 0 8px;line-height:1.3;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+.sub{font-size:14px;color:var(--mut);margin:0 0 24px}
 .sub b{color:var(--ink)}
 h2{font-size:17px;margin:30px 0 10px}
-.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:0 0 12px;text-decoration:none}
-.card.hero{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.card .k{font-size:12px;color:var(--mut)} .card.hero .k{opacity:.7;color:inherit}
-.card .v{font-size:22px;font-weight:700;margin:2px 0}
-.card .s{font-size:13px;color:var(--mut)} .card.hero .s{opacity:.8;color:inherit}
-.ep{display:flex;gap:14px;align-items:flex-start}
-.ep .n{flex:0 0 44px;height:44px;border-radius:12px;background:var(--acc-soft);color:var(--ink);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
-.ep .t{font-weight:700;font-size:15px;line-height:1.45}
-.ep .d{font-size:12.5px;color:var(--mut);margin-top:4px;line-height:1.6}
-.ep .d span{white-space:nowrap;margin-right:10px}
-.badge{display:inline-block;padding:1px 9px;border-radius:999px;font-size:11.5px;font-weight:600;margin-top:6px}
-.s0{background:var(--line);color:var(--mut)}.s1{background:#FEF3C7;color:#92400E}.s2{background:#DCFCE7;color:#166534}.s3{background:#DBEAFE;color:#1E40AF}.s4{background:var(--ink);color:var(--bg)}
+/* episode card */
+.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 18px 18px;margin:0 0 16px;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--grad)}
+.chips{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+.badge{display:inline-block;padding:3px 12px;border-radius:999px;font-size:12px;font-weight:700;color:#1E2229}
+.s0{background:var(--tile);color:var(--mut)}.s1{background:var(--g1)}.s2{background:var(--g2);color:#fff}.s3{background:var(--g3)}.s4{background:var(--g4);color:#fff}
+.n{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;background:var(--tile);color:var(--mut)}
+.card .t{font-size:19px;font-weight:700;line-height:1.4;color:var(--acc-ink);margin:0 0 8px}
+.card .hook{font-size:14px;color:var(--mut);margin:0 0 14px;line-height:1.6}
+.dates{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.tile{background:var(--tile);border-radius:12px;padding:10px 12px}
+.tile .k{font-size:11.5px;color:var(--mut)} .tile .v{font-size:14.5px;font-variant-numeric:tabular-nums;margin-top:2px}
+.tile .w{font-size:11px;color:var(--mut)}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-block;padding:9px 16px;border-radius:999px;border:1.5px solid var(--acc);color:var(--acc-ink);font-size:14px;text-decoration:none;background:transparent;font-family:inherit;cursor:pointer}
+.btn.primary{background:var(--grad);border-color:transparent;color:#1E2229;font-weight:700}
+.btn:disabled{opacity:.4;cursor:default}
+.vlink{font-size:13px;color:var(--mut);margin-top:10px;word-break:break-all}
+.vlink a{color:var(--acc-ink)}
+.memo{font-size:12.5px;color:var(--mut);margin-top:10px}
+.hero{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;margin-bottom:18px;display:flex;gap:16px;align-items:center}
+.hero .big{font-size:30px;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.hero .s{font-size:13.5px;color:var(--mut);line-height:1.5}
 .guide{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px 14px 32px;font-size:14px;margin:0}
 .guide li{margin:6px 0}
-code{background:var(--line);padding:1px 6px;border-radius:6px;font-size:12.5px}
+code{background:var(--tile);padding:1px 6px;border-radius:6px;font-size:12.5px}
 footer{text-align:center;color:var(--mut);font-size:12px;margin-top:36px}
-/* episode */
+/* episode page */
 .back{font-size:13px;color:var(--mut);text-decoration:none;display:inline-block;margin-bottom:10px}
-.meta{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--mut);margin:6px 0 16px} .meta b{color:var(--ink)}
+.meta{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--mut);margin:6px 0 14px} .meta b{color:var(--ink)}
 .tools{display:flex;gap:8px;margin-bottom:18px}
-.tools button{flex:1;background:var(--ink);color:var(--bg);border:0;border-radius:12px;padding:12px;font-size:14px;font-family:inherit;cursor:pointer}
+.tools .btn{flex:1;text-align:center}
 .toc{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
 .toc a{font-size:12.5px;text-decoration:none;color:var(--mut);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
 .toc a b{color:var(--acc);margin-right:4px;font-variant-numeric:tabular-nums}
-article{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 20px;font-size:16.5px;line-height:1.9}
+article{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 20px;font-size:16.5px;line-height:1.9}
 article h2{font-size:18px;margin:34px 0 12px;padding-top:18px;border-top:1px solid var(--line);scroll-margin-top:14px}
 article h2:first-child{border-top:0;margin-top:0;padding-top:0}
-.time{display:inline-block;background:var(--ink);color:var(--bg);font-size:11.5px;padding:1px 8px;border-radius:6px;margin-right:8px;vertical-align:middle;font-variant-numeric:tabular-nums}
+.time{display:inline-block;background:var(--grad);color:#1E2229;font-size:11.5px;font-weight:700;padding:1px 8px;border-radius:6px;margin-right:8px;vertical-align:middle;font-variant-numeric:tabular-nums}
 article p{margin:0 0 13px}
 .note{margin:0 0 18px;padding:9px 14px;border-left:3px solid var(--acc);background:var(--quote-bg);color:var(--quote-ink);font-size:13.5px;border-radius:0 10px 10px 0}
 .screen{display:flex;gap:9px;align-items:flex-start;background:var(--screen-bg);color:var(--screen-ink);border-radius:10px;padding:8px 12px;font-size:13.5px;margin:4px 0 16px;line-height:1.5}
 .screen span{flex:0 0 auto;background:var(--screen-ink);color:var(--screen-bg);font-size:10.5px;padding:1px 6px;border-radius:5px;margin-top:3px}
 mark{background:var(--acc-soft);color:var(--ink);padding:0 4px;border-radius:4px}
 figure{margin:6px 0 20px} figure img{width:100%;border-radius:12px;display:block} figcaption{font-size:12px;color:var(--mut);margin-top:6px;text-align:center}
-.src{font-size:12px;color:var(--mut);margin-top:22px;padding-top:12px;border-top:1px dashed var(--line)} .src a{word-break:break-all}
+.src{font-size:12px;color:var(--mut);margin-top:22px;padding-top:12px;border-top:1px dashed var(--line)} .src a{word-break:break-all;color:var(--acc-ink)}
 /* prompter */
 .pr{position:fixed;inset:0;background:#000;color:#fff;z-index:50;display:none;flex-direction:column}
 .pr.on{display:flex}
@@ -52,16 +74,16 @@ figure{margin:6px 0 20px} figure img{width:100%;border-radius:12px;display:block
 .pbar button{background:#333;color:#fff;border:0;padding:7px 12px;border-radius:8px;font-family:inherit}
 .pbar input{width:90px;vertical-align:middle}
 .ptext{flex:1;overflow:auto;padding:40vh 7% 60vh;font-size:38px;line-height:1.7;font-weight:600}
-.ptext p{margin:0 0 .9em}.ptext h3{color:#F59E0B;font-size:.55em;margin:1.6em 0 .6em}.ptext .ps{font-size:.45em;color:#818CF8;font-weight:400;margin:0 0 1em}
-@media print{.tools,.toc,.back,.pr{display:none!important}article{border:0;padding:0;font-size:14px}}
+.ptext p{margin:0 0 .9em}.ptext h3{color:#F2B233;font-size:.55em;margin:1.6em 0 .6em}.ptext .ps{font-size:.45em;color:#7DD3C0;font-weight:400;margin:0 0 1em}
+@media print{.tools,.toc,.back,.pr,.topline{display:none!important}article{border:0;padding:0;font-size:14px}h1{color:#000;background:none}}
 </style></head><body>
 <div class="wrap">
+<div class="topline"></div>
 <a class="back" href="../">← 대본 보드</a>
-<div class="eyebrow">뿌요 · 2화</div>
+<div class="head"><span>뿌요 · 2화</span><span>대본 완료</span></div>
 <h1>겨자씨 만들기: 생애 첫 적금, 100일에 100만 원</h1>
-<div class="meta"><span>음절 <b>2,743</b></span><span>예상 <b>9.1분</b></span><span><span class="badge s2">대본 완료</span></span></div>
-<div class="meta"><span>제공 2026-09-30 (수)</span><span>촬영 2026-10-02 (금)</span><span>공개 2026-10-10 (토)</span></div>
-<div class="tools"><button id="tp">텔레프롬프터</button><button onclick="window.print()">인쇄</button></div>
+<div class="meta"><span>음절 <b>2,743</b></span><span>예상 <b>9.1분</b></span><span>제공 2026-09-30 (수)</span><span>촬영 2026-10-02 (금)</span><span>공개 2026-10-10 (토)</span></div>
+<div class="tools"><button class="btn primary" id="tp">텔레프롬프터</button><button class="btn" onclick="window.print()">인쇄</button></div>
 <div class="toc"><a href="#t0-00"><b>0:00</b>훅</a>
 <a href="#t0-40"><b>0:40</b>왜 100만 원인가 — 겨자씨</a>
 <a href="#t2-00"><b>2:00</b>적금 고르기 — 기준 3개, 후보 3개</a>
