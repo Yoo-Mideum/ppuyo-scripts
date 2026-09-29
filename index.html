@@ -1,15 +1,15 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>뿌요 대본 보드</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet"><style>
 :root{
-  --g1:#E9D9B3;--g2:#D9B97E;--g3:#C99A5E;--g4:#B57F55;
+  --g1:#F1E3B0;--g2:#E2C35C;--g3:#C9A227;--g4:#8A6D12;
   --grad:linear-gradient(90deg,var(--g1),var(--g2),var(--g3),var(--g4));
-  --bg:#FAF8F4;--card:#FFFFFF;--tile:#F3F0EA;--ink:#22201C;--mut:#7A7368;--line:#E8E3DA;
-  --acc:#B98A4A;--acc-ink:#8C6224;--acc-soft:#F3E7CC;
-  --screen-bg:#EEF1F0;--screen-ink:#4E6660;--quote-bg:#F7F1E4;--quote-ink:#6E5326
+  --bg:#FBFAF6;--card:#FFFFFF;--tile:#F4F1E8;--ink:#1F1E1A;--mut:#77726A;--line:#E9E4D8;
+  --acc:#C9A227;--acc-ink:#8A6D12;--acc-soft:#F6ECC4;--sec:#6B7F5A;--sec-soft:#E8EEE2;
+  --screen-bg:#EEF2EC;--screen-ink:#4F6544;--quote-bg:#F9F3DF;--quote-ink:#6E5A16
 }
 @media(prefers-color-scheme:dark){:root{
-  --bg:#121110;--card:#1A1816;--tile:#242120;--ink:#EDE7DB;--mut:#8F877B;--line:#2B2724;
-  --acc:#D2AA6C;--acc-ink:#E3C48E;--acc-soft:#3B3020;
-  --screen-bg:#1F2422;--screen-ink:#A9C2B8;--quote-bg:#26211A;--quote-ink:#D8BE8E
+  --bg:#121210;--card:#1A1916;--tile:#242219;--ink:#EEE9DC;--mut:#928B7E;--line:#2C2A22;
+  --acc:#D9B33A;--acc-ink:#E8C95C;--acc-soft:#3A3116;--sec:#9DB08A;--sec-soft:#26301F;
+  --screen-bg:#1F2620;--screen-ink:#A9C29A;--quote-bg:#27231A;--quote-ink:#DCC479
 }}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Gowun Dodum','Noto Sans KR',system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -50,6 +50,30 @@ h2{font-size:17px;margin:30px 0 10px;font-weight:400}
 .guide li{margin:6px 0} .guide b{font-weight:400;color:var(--acc-ink)}
 code{background:var(--tile);padding:1px 6px;border-radius:6px;font-size:12.5px}
 footer{text-align:center;color:var(--mut);font-size:12px;margin-top:36px}
+.sec-h{display:flex;align-items:center;gap:10px;margin:28px 0 12px;font-size:13px;color:var(--mut);letter-spacing:.06em}
+.sec-h:after{content:"";flex:1;height:1px;background:var(--line)}
+.sec-h b{font-weight:400;color:var(--ink);font-size:15px}
+.s1{background:var(--acc-soft);color:var(--acc-ink)}
+.s0{background:var(--sec-soft);color:var(--sec)}
+.card.plan{border-style:dashed;background:transparent}
+.card.plan .t{color:var(--ink)}
+details.done{border:1px solid var(--line);border-radius:18px;background:var(--card);margin-top:8px}
+details.done summary{list-style:none;cursor:pointer;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;font-size:15px}
+details.done summary::-webkit-details-marker{display:none}
+details.done summary .cnt{font-size:12px;color:var(--mut)}
+details.done summary:after{content:"＋";color:var(--mut);margin-left:10px}
+details.done[open] summary:after{content:"－"}
+.done-list{list-style:none;margin:0;padding:0 18px 10px;border-top:1px solid var(--line)}
+.done-list li{display:flex;gap:12px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.done-list li:last-child{border-bottom:0}
+.done-list .n{flex:0 0 auto}
+.done-list a{text-decoration:none;flex:1}
+.done-list .d{font-size:12px;color:var(--mut);white-space:nowrap}
+.gbox{border:1.5px solid var(--acc);border-radius:18px;padding:18px 18px 14px;margin-top:8px;position:relative}
+.gbox .gt{position:absolute;top:-11px;left:16px;background:var(--bg);padding:0 8px;font-size:12.5px;color:var(--acc-ink);letter-spacing:.06em}
+.gbox ul{margin:0;padding:0 0 0 18px;font-size:14px}
+.gbox li{margin:7px 0} .gbox li b{font-weight:400;color:var(--acc-ink)}
+.gbox .tlink{display:inline-block;margin-top:10px;font-size:13.5px;color:var(--acc-ink);text-decoration:none;border-bottom:1px solid var(--acc)}
 .back{font-size:13px;color:var(--mut);text-decoration:none;display:inline-block;margin-bottom:10px}
 .meta{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--mut);margin:6px 0 14px} .meta b{color:var(--ink);font-weight:400}
 .tools{display:flex;gap:8px;margin-bottom:18px}
@@ -83,34 +107,21 @@ figure{margin:6px 0 20px} figure img{width:100%;border-radius:12px;display:block
 <h1>뿌요 짠테크 대본</h1>
 <p class="sub">대본 제공 <b>수요일</b> → 촬영 <b>금요일</b> → 공개 <b>다음주 토요일</b>. 각 회차 카드에서 대본을 열고, 공개 후 “영상 링크 등록”으로 링크를 남겨주세요.</p>
 <div class="hero"><div class="big">D-10</div><div class="s"><b>2화 공개 2026-10-10 (토)</b><br>촬영 2026-10-02 (금) · 대본 완료</div></div>
-<div class="card" data-ep="1" data-video="">
-<div class="chips"><span class="badge s2">대본 완료</span><span class="n">1화</span></div>
-<div class="t">짠테크로 1년 1천만, 3년 1억 — 뿌요의 로드맵</div>
-<p class="hook">“커피 끊지 마세요. 배달도 시키셔도 됩니다.”</p><div class="dates"><div class="tile"><div class="k">제공</div><div class="v">2026-09-09</div><div class="w">수요일</div></div><div class="tile"><div class="k">촬영</div><div class="v">2026-09-11</div><div class="w">금요일</div></div><div class="tile"><div class="k">공개</div><div class="v">2026-09-19</div><div class="w">토요일</div></div></div>
-<div class="btns"><a class="btn primary" href="ep01/">대본 열기</a><button class="btn reg">영상 링크 등록</button></div>
-<div class="vlink"></div><div class="memo">【】 자기소개 수치 채우기 · 2,745음절 · 9.2분</div>
-</div><div class="card" data-ep="2" data-video="">
-<div class="chips"><span class="badge s2">대본 완료</span><span class="n">2화</span></div>
-<div class="t">겨자씨 만들기: 생애 첫 적금, 100일에 100만 원</div>
-<p class="hook">“이자 4천 원 받으려고 100일 동안 매일 만 원씩 넣으라고 하면, 하시겠습니까.”</p><div class="dates"><div class="tile"><div class="k">제공</div><div class="v">2026-09-30</div><div class="w">수요일</div></div><div class="tile"><div class="k">촬영</div><div class="v">2026-10-02</div><div class="w">금요일</div></div><div class="tile"><div class="k">공개</div><div class="v">2026-10-10</div><div class="w">토요일</div></div></div>
-<div class="btns"><a class="btn primary" href="ep02/">대본 열기</a><button class="btn reg">영상 링크 등록</button></div>
-<div class="vlink"></div><div class="memo">금리·상품 조건 촬영일에 앱에서 재확인 · 2,743음절 · 9.1분</div>
-</div><div class="card" data-ep="3" data-video="">
-<div class="chips"><span class="n">3화 (예정)</span></div>
-<div class="t">연쇄적금러 — 매주 적금 하나씩, 만기가 매주 돌아오는 구조</div>
-<div class="dates"><div class="tile"><div class="k">제공</div><div class="v">2026-10-07</div><div class="w">수요일</div></div><div class="tile"><div class="k">촬영</div><div class="v">2026-10-09</div><div class="w">금요일</div></div><div class="tile"><div class="k">공개</div><div class="v">2026-10-17</div><div class="w">토요일</div></div></div>
-<div class="btns"><button class="btn" disabled>대본 준비 중</button><button class="btn reg">영상 링크 등록</button></div>
-<div class="vlink"></div><div class="memo">2화 말미 예고 반영</div>
-</div>
-<a class="card" href="topics/" style="text-decoration:none"><div class="chips"><span class="n">기획</span></div><div class="t">이후 대본 주제 20 →</div><div class="memo">1년차 막는 짠테크 → 2년차 버는 짠테크 → 3년차 불리는 짠테크 순서</div></a>
-<h2>가이드</h2>
-<ul class="guide">
+<div class="sec-h"><b>해야 할 것</b><span>진행 중</span></div>
+<div class="card" data-ep="1" data-video=""><div class="chips"><span class="n">1화</span><span class="badge s2">대본 완료</span></div><div class="t">짠테크로 1년 1천만, 3년 1억 — 뿌요의 로드맵</div><p class="hook">“커피 끊지 마세요. 배달도 시키셔도 됩니다.”</p><div class="dates"><div class="tile"><div class="k">제공</div><div class="v">2026-09-09</div><div class="w">수요일</div></div><div class="tile"><div class="k">촬영</div><div class="v">2026-09-11</div><div class="w">금요일</div></div><div class="tile"><div class="k">공개</div><div class="v">2026-09-19</div><div class="w">토요일</div></div></div><div class="btns"><a class="btn primary" href="ep01/">대본 열기</a><button class="btn reg">영상 링크 등록</button></div><div class="vlink"></div><div class="memo">【】 자기소개 수치 채우기 · 2,745음절 · 9.2분</div></div><div class="card" data-ep="2" data-video=""><div class="chips"><span class="n">2화</span><span class="badge s2">대본 완료</span></div><div class="t">겨자씨 만들기: 생애 첫 적금, 100일에 100만 원</div><p class="hook">“이자 4천 원 받으려고 100일 동안 매일 만 원씩 넣으라고 하면, 하시겠습니까.”</p><div class="dates"><div class="tile"><div class="k">제공</div><div class="v">2026-09-30</div><div class="w">수요일</div></div><div class="tile"><div class="k">촬영</div><div class="v">2026-10-02</div><div class="w">금요일</div></div><div class="tile"><div class="k">공개</div><div class="v">2026-10-10</div><div class="w">토요일</div></div></div><div class="btns"><a class="btn primary" href="ep02/">대본 열기</a><button class="btn reg">영상 링크 등록</button></div><div class="vlink"></div><div class="memo">금리·상품 조건 촬영일에 앱에서 재확인 · 2,743음절 · 9.1분</div></div>
+<div class="sec-h"><b>예정</b><span>다음 회차</span></div><div class="card plan" data-ep="3" data-video=""><div class="chips"><span class="n">3화</span><span class="badge s0">예정</span></div><div class="t">연쇄적금러 — 매주 적금 하나씩, 만기가 매주 돌아오는 구조</div><div class="dates"><div class="tile"><div class="k">제공</div><div class="v">2026-10-07</div><div class="w">수요일</div></div><div class="tile"><div class="k">촬영</div><div class="v">2026-10-09</div><div class="w">금요일</div></div><div class="tile"><div class="k">공개</div><div class="v">2026-10-17</div><div class="w">토요일</div></div></div><div class="btns"><button class="btn" disabled>대본 준비 중</button><button class="btn reg">영상 링크 등록</button></div><div class="vlink"></div><div class="memo">2화 말미 예고 반영</div></div>
+
+<div class="sec-h"><b>가이드라인</b></div>
+<div class="gbox"><div class="gt">뿌요 대본 규칙</div>
+<ul>
 <li><b>톤</b> — 전문가 톤. 감탄사·'여러분'·'~잖아요' 금지. 짧은 단정형.</li>
 <li><b>훅</b> — 숫자 + 반전 + 약속, 15초 안에. 오픈 루프는 3~4분 지점까지 닫지 않기.</li>
 <li><b>신뢰</b> — 매 회차 '이건 안 됩니다' 솔직 구간 1개. 구독 CTA는 마지막 한 번.</li>
 <li><b>길이</b> — 10분 ≈ 3,000음절(분당 300). 각 회차 페이지 상단에 자동 계산.</li>
-<li><b>영상 링크</b> — 버튼으로 등록한 링크는 이 기기 브라우저에만 저장됩니다. 모두에게 보이게 하려면 <code>episodes.json</code>의 <code>video</code>에 넣고 push.</li>
+<li><b>영상 링크</b> — 버튼으로 등록한 링크는 이 기기 브라우저에만 저장. 모두에게 보이려면 <code>episodes.json</code>의 <code>video</code>에 넣고 push.</li>
 </ul>
+<a class="tlink" href="topics/">이후 대본 주제 20 보기 →</a>
+</div>
 <footer>뿌요 짠테크 유튜브 · 대본 보드</footer>
 </div>
 <script>

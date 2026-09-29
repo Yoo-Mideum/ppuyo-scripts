@@ -15,16 +15,16 @@ def add(s, n): return date(s) + dt.timedelta(days=n)
 # 뿌요 팔레트 — 샴페인 → 골드 → 앰버 → 브론즈, 채도 낮은 웜톤 4단계
 CSS = """
 :root{
-  --g1:#E9D9B3;--g2:#D9B97E;--g3:#C99A5E;--g4:#B57F55;
+  --g1:#F1E3B0;--g2:#E2C35C;--g3:#C9A227;--g4:#8A6D12;
   --grad:linear-gradient(90deg,var(--g1),var(--g2),var(--g3),var(--g4));
-  --bg:#FAF8F4;--card:#FFFFFF;--tile:#F3F0EA;--ink:#22201C;--mut:#7A7368;--line:#E8E3DA;
-  --acc:#B98A4A;--acc-ink:#8C6224;--acc-soft:#F3E7CC;
-  --screen-bg:#EEF1F0;--screen-ink:#4E6660;--quote-bg:#F7F1E4;--quote-ink:#6E5326
+  --bg:#FBFAF6;--card:#FFFFFF;--tile:#F4F1E8;--ink:#1F1E1A;--mut:#77726A;--line:#E9E4D8;
+  --acc:#C9A227;--acc-ink:#8A6D12;--acc-soft:#F6ECC4;--sec:#6B7F5A;--sec-soft:#E8EEE2;
+  --screen-bg:#EEF2EC;--screen-ink:#4F6544;--quote-bg:#F9F3DF;--quote-ink:#6E5A16
 }
 @media(prefers-color-scheme:dark){:root{
-  --bg:#121110;--card:#1A1816;--tile:#242120;--ink:#EDE7DB;--mut:#8F877B;--line:#2B2724;
-  --acc:#D2AA6C;--acc-ink:#E3C48E;--acc-soft:#3B3020;
-  --screen-bg:#1F2422;--screen-ink:#A9C2B8;--quote-bg:#26211A;--quote-ink:#D8BE8E
+  --bg:#121210;--card:#1A1916;--tile:#242219;--ink:#EEE9DC;--mut:#928B7E;--line:#2C2A22;
+  --acc:#D9B33A;--acc-ink:#E8C95C;--acc-soft:#3A3116;--sec:#9DB08A;--sec-soft:#26301F;
+  --screen-bg:#1F2620;--screen-ink:#A9C29A;--quote-bg:#27231A;--quote-ink:#DCC479
 }}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Gowun Dodum','Noto Sans KR',system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -65,6 +65,30 @@ h2{font-size:17px;margin:30px 0 10px;font-weight:400}
 .guide li{margin:6px 0} .guide b{font-weight:400;color:var(--acc-ink)}
 code{background:var(--tile);padding:1px 6px;border-radius:6px;font-size:12.5px}
 footer{text-align:center;color:var(--mut);font-size:12px;margin-top:36px}
+.sec-h{display:flex;align-items:center;gap:10px;margin:28px 0 12px;font-size:13px;color:var(--mut);letter-spacing:.06em}
+.sec-h:after{content:"";flex:1;height:1px;background:var(--line)}
+.sec-h b{font-weight:400;color:var(--ink);font-size:15px}
+.s1{background:var(--acc-soft);color:var(--acc-ink)}
+.s0{background:var(--sec-soft);color:var(--sec)}
+.card.plan{border-style:dashed;background:transparent}
+.card.plan .t{color:var(--ink)}
+details.done{border:1px solid var(--line);border-radius:18px;background:var(--card);margin-top:8px}
+details.done summary{list-style:none;cursor:pointer;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;font-size:15px}
+details.done summary::-webkit-details-marker{display:none}
+details.done summary .cnt{font-size:12px;color:var(--mut)}
+details.done summary:after{content:"＋";color:var(--mut);margin-left:10px}
+details.done[open] summary:after{content:"－"}
+.done-list{list-style:none;margin:0;padding:0 18px 10px;border-top:1px solid var(--line)}
+.done-list li{display:flex;gap:12px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.done-list li:last-child{border-bottom:0}
+.done-list .n{flex:0 0 auto}
+.done-list a{text-decoration:none;flex:1}
+.done-list .d{font-size:12px;color:var(--mut);white-space:nowrap}
+.gbox{border:1.5px solid var(--acc);border-radius:18px;padding:18px 18px 14px;margin-top:8px;position:relative}
+.gbox .gt{position:absolute;top:-11px;left:16px;background:var(--bg);padding:0 8px;font-size:12.5px;color:var(--acc-ink);letter-spacing:.06em}
+.gbox ul{margin:0;padding:0 0 0 18px;font-size:14px}
+.gbox li{margin:7px 0} .gbox li b{font-weight:400;color:var(--acc-ink)}
+.gbox .tlink{display:inline-block;margin-top:10px;font-size:13.5px;color:var(--acc-ink);text-decoration:none;border-bottom:1px solid var(--acc)}
 .back{font-size:13px;color:var(--mut);text-decoration:none;display:inline-block;margin-bottom:10px}
 .meta{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--mut);margin:6px 0 14px} .meta b{color:var(--ink);font-weight:400}
 .tools{display:flex;gap:8px;margin-bottom:18px}
@@ -222,32 +246,50 @@ topics_page = HEAD('뿌요 · 이후 대본 주제') + f"""
 (ROOT/'topics'/'index.html').write_text(topics_page, encoding='utf-8')
 
 # ---- hub ----
-nxt = None; cards = []
-for e in D['episodes']:
+def tile(k, d): return f'<div class="tile"><div class="k">{k}</div><div class="v">{fmt(d)}</div><div class="w">{W[(d.weekday()+1)%7]}요일</div></div>'
+def card(e, plan=False):
     g = e.get('given'); n = e['n']
     shoot = add(g, R['shootOffset']) if g else None
     pub = add(g, R['publishOffset']) if g else None
-    if not nxt and pub and pub >= today: nxt = (e, shoot, pub)
     has = bool(e.get('file'))
-    chips = (badge(e['status']) if has or e['status'] != '시작 전' else '') + f'<span class="n">{n}화{"" if has else " (예정)"}</span>'
+    chips = f'<span class="n">{n}화</span>' + (badge(e['status']) if not plan else '<span class="badge s0">예정</span>')
     hook = f'<p class="hook">“{html.escape(e["hook"])}”</p>' if e.get('hook') else ''
-    def tile(k, d): return f'<div class="tile"><div class="k">{k}</div><div class="v">{fmt(d)}</div><div class="w">{W[(d.weekday()+1)%7]}요일</div></div>'
     dates = f'<div class="dates">{tile("제공", date(g))}{tile("촬영", shoot)}{tile("공개", pub)}</div>' if g else ''
     extra = f' · {e["_syl"]:,}음절 · {e["_min"]:.1f}분' if '_syl' in e else ''
     open_btn = f'<a class="btn primary" href="ep{n:02d}/">대본 열기</a>' if has else '<button class="btn" disabled>대본 준비 중</button>'
-    memo = f'<div class="memo">{html.escape(e["memo"])}{extra}</div>' if e.get('memo') or extra else ''
+    memo = f'<div class="memo">{html.escape(e.get("memo",""))}{extra}</div>' if e.get('memo') or extra else ''
     video = html.escape(e.get('video', ''))
-    cards.append(f'''<div class="card" data-ep="{n}" data-video="{video}">
-<div class="chips">{chips}</div>
-<div class="t">{html.escape(e["title"])}</div>
-{hook}{dates}
-<div class="btns">{open_btn}<button class="btn reg">영상 링크 등록</button></div>
-<div class="vlink"></div>{memo}
-</div>''')
+    cls = ' plan' if plan else ''
+    return (f'<div class="card{cls}" data-ep="{n}" data-video="{video}">'
+            f'<div class="chips">{chips}</div><div class="t">{html.escape(e["title"])}</div>{hook}{dates}'
+            f'<div class="btns">{open_btn}<button class="btn reg">영상 링크 등록</button></div>'
+            f'<div class="vlink"></div>{memo}</div>')
+
+todo = [e for e in D['episodes'] if e['status'] in ('대본 작성 중','대본 완료','촬영 완료')]
+plan = [e for e in D['episodes'] if e['status'] == '시작 전']
+done = [e for e in D['episodes'] if e['status'] == '공개 완료']
+todo.sort(key=lambda e: e.get('given','')); plan.sort(key=lambda e: e.get('given','')); done.sort(key=lambda e: e.get('given',''), reverse=True)
+
+nxt = None
+for e in todo:
+    if e.get('given'):
+        pub = add(e['given'], R['publishOffset'])
+        if pub >= today: nxt = (e, add(e['given'], R['shootOffset']), pub); break
 hero = ''
 if nxt:
     e, shoot, pub = nxt; dd = (pub - today).days
     hero = f'<div class="hero"><div class="big">D-{dd}</div><div class="s"><b>{e["n"]}화 공개 {fmtw(pub)}</b><br>촬영 {fmtw(shoot)} · {html.escape(e["status"])}</div></div>'
+
+todo_html = ''.join(card(e) for e in todo) or '<div class="card plan"><div class="memo">진행 중인 회차가 없습니다.</div></div>'
+plan_html = ''.join(card(e, plan=True) for e in plan)
+done_items = ''.join(
+    f'<li><span class="n">{e["n"]}화</span><a href="ep{e["n"]:02d}/">{html.escape(e["title"])}</a><span class="d">공개 {fmt(add(e["given"], R["publishOffset"]))}</span></li>'
+    for e in done)
+done_html = (f'<details class="done"><summary><span>공개 완료</span><span class="cnt">{len(done)}편</span></summary>'
+             f'<ul class="done-list">{done_items}</ul></details>') if done else ''
+plan_sec = '<div class="sec-h"><b>예정</b><span>다음 회차</span></div>' + plan_html if plan_html else ''
+done_sec = '<div class="sec-h"><b>완료</b><span>공개됨</span></div>' + done_html if done_html else ''
+
 hub = HEAD('뿌요 대본 보드') + f"""
 <div class="wrap">
 <div class="topline"></div>
@@ -255,16 +297,21 @@ hub = HEAD('뿌요 대본 보드') + f"""
 <h1>뿌요 짠테크 대본</h1>
 <p class="sub">대본 제공 <b>수요일</b> → 촬영 <b>금요일</b> → 공개 <b>다음주 토요일</b>. 각 회차 카드에서 대본을 열고, 공개 후 “영상 링크 등록”으로 링크를 남겨주세요.</p>
 {hero}
-{''.join(cards)}
-<a class="card" href="topics/" style="text-decoration:none"><div class="chips"><span class="n">기획</span></div><div class="t">이후 대본 주제 20 →</div><div class="memo">1년차 막는 짠테크 → 2년차 버는 짠테크 → 3년차 불리는 짠테크 순서</div></a>
-<h2>가이드</h2>
-<ul class="guide">
+<div class="sec-h"><b>해야 할 것</b><span>진행 중</span></div>
+{todo_html}
+{plan_sec}
+{done_sec}
+<div class="sec-h"><b>가이드라인</b></div>
+<div class="gbox"><div class="gt">뿌요 대본 규칙</div>
+<ul>
 <li><b>톤</b> — 전문가 톤. 감탄사·'여러분'·'~잖아요' 금지. 짧은 단정형.</li>
 <li><b>훅</b> — 숫자 + 반전 + 약속, 15초 안에. 오픈 루프는 3~4분 지점까지 닫지 않기.</li>
 <li><b>신뢰</b> — 매 회차 '이건 안 됩니다' 솔직 구간 1개. 구독 CTA는 마지막 한 번.</li>
 <li><b>길이</b> — 10분 ≈ 3,000음절(분당 {R['syllablesPerMin']}). 각 회차 페이지 상단에 자동 계산.</li>
-<li><b>영상 링크</b> — 버튼으로 등록한 링크는 이 기기 브라우저에만 저장됩니다. 모두에게 보이게 하려면 <code>episodes.json</code>의 <code>video</code>에 넣고 push.</li>
+<li><b>영상 링크</b> — 버튼으로 등록한 링크는 이 기기 브라우저에만 저장. 모두에게 보이려면 <code>episodes.json</code>의 <code>video</code>에 넣고 push.</li>
 </ul>
+<a class="tlink" href="topics/">이후 대본 주제 20 보기 →</a>
+</div>
 <footer>뿌요 짠테크 유튜브 · 대본 보드</footer>
 </div>
 <script>{HUB_JS}</script>
