@@ -1,0 +1,265 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>1화 · 짠테크로 1년 1천만, 3년 1억 — 뿌요의 로드맵</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet"><style>
+:root{--bg:#FAF7F2;--card:#fff;--ink:#1F2933;--mut:#6B7280;--line:#E7E1D8;--acc:#D97706;--acc-soft:#FDE68A;--screen-bg:#EEF2FF;--screen-ink:#3730A3;--quote-bg:#FFFBEB;--quote-ink:#78350F}
+@media(prefers-color-scheme:dark){:root{--bg:#0F1216;--card:#171B21;--ink:#F3F4F6;--mut:#9CA3AF;--line:#2A3039;--acc:#F59E0B;--acc-soft:#7C5A0B;--screen-bg:#1E2540;--screen-ink:#A5B4FC;--quote-bg:#2A2410;--quote-ink:#FDE68A}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Gowun Dodum','Noto Sans KR',system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:600px;margin:0 auto;padding:28px 18px 80px}
+.eyebrow{font-size:12px;color:var(--mut);letter-spacing:.08em}
+h1{font-size:24px;margin:4px 0 6px;line-height:1.35}
+.sub{font-size:14px;color:var(--mut);margin:0 0 22px}
+.sub b{color:var(--ink)}
+h2{font-size:17px;margin:30px 0 10px}
+.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:0 0 12px;text-decoration:none}
+.card.hero{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.card .k{font-size:12px;color:var(--mut)} .card.hero .k{opacity:.7;color:inherit}
+.card .v{font-size:22px;font-weight:700;margin:2px 0}
+.card .s{font-size:13px;color:var(--mut)} .card.hero .s{opacity:.8;color:inherit}
+.ep{display:flex;gap:14px;align-items:flex-start}
+.ep .n{flex:0 0 44px;height:44px;border-radius:12px;background:var(--acc-soft);color:var(--ink);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+.ep .t{font-weight:700;font-size:15px;line-height:1.45}
+.ep .d{font-size:12.5px;color:var(--mut);margin-top:4px;line-height:1.6}
+.ep .d span{white-space:nowrap;margin-right:10px}
+.badge{display:inline-block;padding:1px 9px;border-radius:999px;font-size:11.5px;font-weight:600;margin-top:6px}
+.s0{background:var(--line);color:var(--mut)}.s1{background:#FEF3C7;color:#92400E}.s2{background:#DCFCE7;color:#166534}.s3{background:#DBEAFE;color:#1E40AF}.s4{background:var(--ink);color:var(--bg)}
+.guide{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px 14px 32px;font-size:14px;margin:0}
+.guide li{margin:6px 0}
+code{background:var(--line);padding:1px 6px;border-radius:6px;font-size:12.5px}
+footer{text-align:center;color:var(--mut);font-size:12px;margin-top:36px}
+/* episode */
+.back{font-size:13px;color:var(--mut);text-decoration:none;display:inline-block;margin-bottom:10px}
+.meta{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--mut);margin:6px 0 16px} .meta b{color:var(--ink)}
+.tools{display:flex;gap:8px;margin-bottom:18px}
+.tools button{flex:1;background:var(--ink);color:var(--bg);border:0;border-radius:12px;padding:12px;font-size:14px;font-family:inherit;cursor:pointer}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.toc a{font-size:12.5px;text-decoration:none;color:var(--mut);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+.toc a b{color:var(--acc);margin-right:4px;font-variant-numeric:tabular-nums}
+article{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 20px;font-size:16.5px;line-height:1.9}
+article h2{font-size:18px;margin:34px 0 12px;padding-top:18px;border-top:1px solid var(--line);scroll-margin-top:14px}
+article h2:first-child{border-top:0;margin-top:0;padding-top:0}
+.time{display:inline-block;background:var(--ink);color:var(--bg);font-size:11.5px;padding:1px 8px;border-radius:6px;margin-right:8px;vertical-align:middle;font-variant-numeric:tabular-nums}
+article p{margin:0 0 13px}
+.note{margin:0 0 18px;padding:9px 14px;border-left:3px solid var(--acc);background:var(--quote-bg);color:var(--quote-ink);font-size:13.5px;border-radius:0 10px 10px 0}
+.screen{display:flex;gap:9px;align-items:flex-start;background:var(--screen-bg);color:var(--screen-ink);border-radius:10px;padding:8px 12px;font-size:13.5px;margin:4px 0 16px;line-height:1.5}
+.screen span{flex:0 0 auto;background:var(--screen-ink);color:var(--screen-bg);font-size:10.5px;padding:1px 6px;border-radius:5px;margin-top:3px}
+mark{background:var(--acc-soft);color:var(--ink);padding:0 4px;border-radius:4px}
+figure{margin:6px 0 20px} figure img{width:100%;border-radius:12px;display:block} figcaption{font-size:12px;color:var(--mut);margin-top:6px;text-align:center}
+.src{font-size:12px;color:var(--mut);margin-top:22px;padding-top:12px;border-top:1px dashed var(--line)} .src a{word-break:break-all}
+/* prompter */
+.pr{position:fixed;inset:0;background:#000;color:#fff;z-index:50;display:none;flex-direction:column}
+.pr.on{display:flex}
+.pbar{display:flex;gap:12px;align-items:center;padding:10px 14px;background:#111;font-size:12.5px;color:#aaa;flex-wrap:wrap}
+.pbar button{background:#333;color:#fff;border:0;padding:7px 12px;border-radius:8px;font-family:inherit}
+.pbar input{width:90px;vertical-align:middle}
+.ptext{flex:1;overflow:auto;padding:40vh 7% 60vh;font-size:38px;line-height:1.7;font-weight:600}
+.ptext p{margin:0 0 .9em}.ptext h3{color:#F59E0B;font-size:.55em;margin:1.6em 0 .6em}.ptext .ps{font-size:.45em;color:#818CF8;font-weight:400;margin:0 0 1em}
+@media print{.tools,.toc,.back,.pr{display:none!important}article{border:0;padding:0;font-size:14px}}
+</style></head><body>
+<div class="wrap">
+<a class="back" href="../">← 대본 보드</a>
+<div class="eyebrow">뿌요 · 1화</div>
+<h1>짠테크로 1년 1천만, 3년 1억 — 뿌요의 로드맵</h1>
+<div class="meta"><span>음절 <b>2,745</b></span><span>예상 <b>9.2분</b></span><span><span class="badge s2">대본 완료</span></span></div>
+<div class="meta"><span>제공 2026-09-09 (수)</span><span>촬영 2026-09-11 (금)</span><span>공개 2026-09-19 (토)</span></div>
+<div class="tools"><button id="tp">텔레프롬프터</button><button onclick="window.print()">인쇄</button></div>
+<div class="toc"><a href="#t0-00"><b>0:00</b>훅</a>
+<a href="#t0-40"><b>0:40</b>자기소개 · 채널 선언</a>
+<a href="#t1-30"><b>1:30</b>짠테크의 정의</a>
+<a href="#t3-00"><b>3:00</b>왜 1억이 아니라 1천만 원부터인가</a>
+<a href="#t5-00"><b>5:00</b>1천만 원을 만드는 3단계</a>
+<a href="#t7-00"><b>7:00</b>1천만 원에서 1억까지, 3년 로드맵</a>
+<a href="#t8-30"><b>8:30</b>오늘의 실행 과제</a>
+<a href="#t9-20"><b>9:20</b>다음 영상 예고 · 구독</a></div>
+<article><div class="note">낭독 기준 약 10분 (분당 300음절 전후). <mark>【 】</mark> 안은 뿌요 본인 수치로 교체.</div>
+<div class="note">[화면] 은 편집 지시. 톤: 단정, 짧은 문장, 감탄사 없음.</div>
+<h2 id="t0-00"><span class="time">0:00</span>훅</h2>
+<p>커피 끊지 마세요. 배달도 시키셔도 됩니다.</p>
+<p>저는 그거 다 하면서 1년에 1천만 원을 모았습니다.</p>
+<p>이유는 간단합니다. 돈이 새는 곳은 커피가 아니기 때문입니다.</p>
+<div class="screen"><span>화면</span>&quot;커피 ≠ 문제&quot; 텍스트</div>
+<p>대부분의 직장인은 한 달에 수십만 원을 잃고 있습니다. 그것도 본인이 모르는 사이에, 정확히 세 군데에서요.</p>
+<p>이 영상이 끝날 때쯤이면 두 가지를 알게 되실 겁니다. 그 세 군데가 어디인지. 그리고 그 돈으로 1년 안에 1천만 원, 3년 안에 1억을 만드는 경로가 어떻게 생겼는지.</p>
+<div class="screen"><span>화면</span>채널 인트로 3초</div>
+<h2 id="t0-40"><span class="time">0:40</span>자기소개 · 채널 선언</h2>
+<p>뿌요입니다.</p>
+<p>저는 지난 <mark>【N년】</mark> 동안 소득을 늘리는 방식이 아니라, 돈이 빠져나가는 구조를 바꾸는 방식으로 <mark>【수치】</mark>를 만들었습니다. 지금은 그 방법을 체계화해서 알려드리는 일을 하고 있습니다.</p>
+<p>이 채널이 약속하는 건 딱 두 개의 숫자입니다.</p>
+<div class="screen"><span>화면</span>&quot;1년 1,000만&quot; / &quot;3년 1억&quot; 크게</div>
+<p>1년에 1천만 원. 3년에 1억.</p>
+<p>월급이 얼마인지는 묻지 않겠습니다. 이 채널에서 다루는 건 얼마를 버느냐가 아니라, 번 돈 중에 얼마가 남느냐이기 때문입니다. 월 200을 벌든 500을 벌든, 남는 돈이 0이면 결과는 같습니다.</p>
+<h2 id="t1-30"><span class="time">1:30</span>짠테크의 정의</h2>
+<p>먼저 용어부터 정리하겠습니다.</p>
+<p>짠테크는 절약이 아닙니다.</p>
+<p>절약은 &#x27;덜 쓰는 행동&#x27;입니다. 짠테크는 &#x27;새는 돈을 막고, 남은 돈의 목적지를 정하는 시스템&#x27;입니다.</p>
+<div class="screen"><span>화면</span>절약 = 행동 / 짠테크 = 시스템</div>
+<p>이 차이가 왜 중요하냐. 절약은 의지력을 쓰고, 짠테크는 의지력을 쓰지 않기 때문입니다.</p>
+<p>의지력은 소모품입니다. 야근하고 밤 열 시에 들어온 날, 배달 앱을 이기는 사람은 없습니다. 그래서 의지력에 기대는 절약은 오래가지 못합니다. 제가 본 대부분의 실패는 방법이 틀려서가 아니라, 방법이 의지력을 요구했기 때문입니다.</p>
+<p>짠테크는 세 가지로 구성됩니다.</p>
+<div class="screen"><span>화면</span>세 항목 순차 등장</div>
+<p>첫째, 고정비 진단. 매달 자동으로 나가는 돈이 정확히 얼마인지 아는 것.</p>
+<p>둘째, 통장 시스템. 돈이 들어오는 순간 갈 곳이 정해져 있는 것.</p>
+<p>셋째, 시드머니 목표. 왜 모으는지, 얼마까지 모으는지가 숫자로 있는 것.</p>
+<p>이 세 가지가 갖춰지면, 커피를 마시든 배달을 시키든 돈은 모입니다. 반대로 이 세 가지가 없으면, 커피를 끊어도 돈은 안 모입니다. 끊은 커피값이 다른 데로 흘러갈 뿐입니다.</p>
+<p>아까 말씀드린 &#x27;세 군데 구멍&#x27;이 뭔지 감이 오실 겁니다. 변동비가 아닙니다. 고정비입니다. 구체적인 항목은 잠시 후에 숫자와 함께 보여드리겠습니다.</p>
+<h2 id="t3-00"><span class="time">3:00</span>왜 1억이 아니라 1천만 원부터인가</h2>
+<p>왜 1억이 아니라 1천만 원부터 말하는지 설명드리겠습니다.</p>
+<p>1천만 원은 투자 시드라고 하기엔 작은 돈입니다. 이걸로 뭘 굴려도 큰 수익은 안 나옵니다.</p>
+<p>그런데 1천만 원을 모아본 사람과 못 모아본 사람은, 완전히 다른 재정 구조를 갖고 있습니다.</p>
+<div class="screen"><span>화면</span>&quot;1,000만 원 = 증명서&quot;</div>
+<p>1천만 원은 돈이 아니라 증명서입니다. &#x27;나는 돈이 모이는 구조를 가진 사람이다&#x27;라는 증명. 이 증명이 없는 상태에서 투자 공부를 하는 건, 면허 없이 자동차 카탈로그를 보는 것과 같습니다. 재밌기는 한데 어디로도 못 갑니다.</p>
+<p>숫자로 쪼개보겠습니다.</p>
+<div class="screen"><span>화면</span>계산 순차 표시</div>
+<p>1천만 원을 12개월로 나누면, 월 84만 원입니다.</p>
+<p>84만 원을 30일로 나누면, 하루 2만 7천 원입니다.</p>
+<p>하루 2만 7천 원. 이게 어디서 나오느냐. 커피 두 잔 참아서 나오는 돈이 아닙니다. 고정비에서 나옵니다.</p>
+<p>이제 세 군데를 공개하겠습니다.</p>
+<div class="screen"><span>화면</span>1. 통신비</div>
+<p>첫째, 통신비입니다. 5G 무제한 요금제를 쓰면서 실제 데이터는 그 절반도 안 쓰는 분들이 많습니다. 사용량에 맞는 요금제, 혹은 알뜰폰으로 옮기면 한 사람당 월 3만 원에서 5만 원이 차이 납니다. 가족 회선까지 합치면 더 커집니다.</p>
+<div class="screen"><span>화면</span>2. 보험료</div>
+<p>둘째, 보험료입니다. 사회초년생 때 지인 소개로 가입한 보험, 보장 내용도 모른 채 매달 10만 원, 20만 원씩 나가는 경우를 정말 많이 봅니다. 보험이 나쁘다는 게 아닙니다. 내가 뭘 사고 있는지 모른 채 돈이 나가는 게 문제입니다.</p>
+<div class="screen"><span>화면</span>3. 구독·자동결제</div>
+<p>셋째, 구독료와 자동결제입니다. OTT, 음악, 멤버십, 앱 유료 기능. 하나하나는 만 원 안팎이라 신경을 안 씁니다. 그런데 합쳐 보면 5만 원, 많게는 10만 원이 넘는 분들이 있습니다. 그리고 그중 절반은 지난달에 한 번도 안 열어봤을 겁니다.</p>
+<div class="screen"><span>화면</span>합계 20~40만 원</div>
+<p>이 세 가지만 정리해도 월 20만 원에서 40만 원이 나옵니다. 1천만 원 목표의 30에서 50퍼센트가 여기서 나오는 겁니다. 의지력 하나도 안 쓰고요.</p>
+<p>나머지는 통장 시스템이 만듭니다. 그 얘기를 지금부터 하겠습니다.</p>
+<h2 id="t5-00"><span class="time">5:00</span>1천만 원을 만드는 3단계</h2>
+<p>1천만 원은 세 단계로 만듭니다. 진단, 시스템, 방어. 오늘은 구조만 말씀드리고, 각 단계의 실행 기준은 다음 영상들에서 하나씩 다루겠습니다.</p>
+<div class="screen"><span>화면</span>1단계 진단</div>
+<p>1단계, 진단입니다.</p>
+<p>카드사 앱이나 홈페이지에서 최근 3개월 결제 내역을 내려받습니다. 그리고 딱 하나만 표시합니다. 매달 같은 금액이 같은 날짜에 나가는 항목. 그게 고정비의 전체 목록입니다.</p>
+<p>이걸 처음 해보신 분들은 대부분 같은 반응을 보입니다. &quot;이게 이렇게 많았나.&quot; 네, 원래 그렇습니다. 고정비는 나가는 순간 눈에 안 보이도록 설계돼 있으니까요.</p>
+<div class="screen"><span>화면</span>2단계 시스템 — 통장 3개 도식</div>
+<p>2단계, 시스템입니다.</p>
+<p>통장을 세 개로 나눕니다. 월급통장, 생활비통장, 모으는통장.</p>
+<p>월급통장은 거쳐 가는 곳입니다. 월급이 들어오는 당일, 모으는통장으로 먼저 자동이체가 나갑니다. 그다음 생활비통장으로 정해진 금액이 갑니다. 이 순서가 전부입니다.</p>
+<p>남는 돈을 저축하는 게 아닙니다. 저축하고 남는 돈으로 사는 겁니다. 문장 순서를 바꾼 것뿐인데, 결과는 완전히 달라집니다. 왜냐하면 두 번째 방식에는 의지력이 들어갈 자리가 없기 때문입니다.</p>
+<div class="screen"><span>화면</span>3단계 방어</div>
+<p>3단계, 방어입니다.</p>
+<p>저는 무지출 챌린지를 권하지 않습니다. 실패 확률이 높고, 실패한 다음 날 보상 소비가 따라옵니다. 결과적으로 안 한 것보다 못한 경우가 많습니다.</p>
+<p>대신 &#x27;무결제 카테고리&#x27;를 한 개 정합니다. 편의점이든, 택시든, 배달이든. 전부를 끊는 게 아니라 하나만 끊습니다. 하나는 지킬 수 있고, 지킨 경험이 다음 하나를 만듭니다.</p>
+<p>이 세 단계가 돌아가기 시작하면, 1년 1천만 원은 목표가 아니라 결과가 됩니다.</p>
+<h2 id="t7-00"><span class="time">7:00</span>1천만 원에서 1억까지, 3년 로드맵</h2>
+<p>이제 1억 얘기를 하겠습니다.</p>
+<div class="screen"><span>화면</span>3년 로드맵 한 장</div>
+<p>1년차는 &#x27;막는 짠테크&#x27;입니다. 구조를 만들고, 1천만 원을 모읍니다.</p>
+<p>2년차는 &#x27;버는 짠테크&#x27;입니다. 소득 파이프를 하나 추가합니다. 부업이든, 이직이든, 자격이든. 누적 4천만 원이 목표입니다.</p>
+<p>3년차는 &#x27;불리는 짠테크&#x27;입니다. 2년 동안 만든 시드를 굴립니다. 여기서 1억에 도달합니다.</p>
+<p>여기서 하나 솔직하게 말씀드려야 합니다.</p>
+<div class="screen"><span>화면</span>84만 × 36개월 = 3,024만</div>
+<p>월 84만 원 저축만으로 3년에 1억은 안 됩니다. 계산하면 3천만 원입니다. 나머지 7천만 원은 소득을 늘리고 운용하는 데서 나옵니다. 이걸 숨기고 &quot;짠테크만 하면 1억&quot;이라고 말하는 건 거짓말입니다.</p>
+<p>그런데 순서가 중요합니다. 1년차에 구조를 만들지 않은 채 소득만 늘리면, 지출이 같이 늘어납니다. 월급이 올라도 남는 돈이 그대로인 분들이 그래서 생깁니다. 구조가 먼저고, 소득은 그 구조 위에 얹는 겁니다.</p>
+<p>이 채널은 그 순서대로 갑니다. 1년차 영상부터 시작합니다.</p>
+<h2 id="t8-30"><span class="time">8:30</span>오늘의 실행 과제</h2>
+<p>영상만 보고 끝내면 아무것도 안 바뀝니다. 오늘 하나만 하시면 됩니다.</p>
+<div class="screen"><span>화면</span>과제 텍스트</div>
+<p>지금 카드 앱을 여세요. 지난달 고정비 중에 금액이 가장 큰 세 개를 찾으세요. 그리고 항목과 금액을 댓글에 적어주세요.</p>
+<p>제가 직접 봅니다. 그리고 가장 많이 나온 항목부터 다음 영상에서 정리 기준을 알려드리겠습니다. 댓글이 곧 다음 강의 커리큘럼이 되는 겁니다.</p>
+<h2 id="t9-20"><span class="time">9:20</span>다음 영상 예고 · 구독</h2>
+<p>다음 영상은 오늘 말씀드린 세 군데 구멍, 통신비·보험료·구독료를 어떤 순서로, 어떤 기준으로 정리하는지 다룹니다. 제가 실제로 정리한 순서 그대로입니다.</p>
+<p>1년 1천만 원, 3년 1억. 이 두 숫자를 같이 만들어 갈 분들은 구독해 두시면 됩니다.</p>
+<p>뿌요였습니다.</p>
+<div class="screen"><span>화면</span>엔드 스크린 — 다음 영상 카드</div></article>
+<footer>뿌요 짠테크 유튜브 · 대본 보드</footer>
+</div>
+<div class="pr" id="pr"><div class="pbar"><button id="pc">닫기</button><button id="pp">▶ / ❚❚</button><label>속도 <input id="sp" type="range" min="0" max="8" step=".5" value="2"></label><label>글자 <input id="sz" type="range" min="24" max="64" step="2" value="38"></label></div><div class="ptext" id="pt"><h3>0:00 · 훅</h3>
+<p>커피 끊지 마세요. 배달도 시키셔도 됩니다.</p>
+<p>저는 그거 다 하면서 1년에 1천만 원을 모았습니다.</p>
+<p>이유는 간단합니다. 돈이 새는 곳은 커피가 아니기 때문입니다.</p>
+<div class="ps">&quot;커피 ≠ 문제&quot; 텍스트</div>
+<p>대부분의 직장인은 한 달에 수십만 원을 잃고 있습니다. 그것도 본인이 모르는 사이에, 정확히 세 군데에서요.</p>
+<p>이 영상이 끝날 때쯤이면 두 가지를 알게 되실 겁니다. 그 세 군데가 어디인지. 그리고 그 돈으로 1년 안에 1천만 원, 3년 안에 1억을 만드는 경로가 어떻게 생겼는지.</p>
+<div class="ps">채널 인트로 3초</div>
+<h3>0:40 · 자기소개 · 채널 선언</h3>
+<p>뿌요입니다.</p>
+<p>저는 지난 【N년】 동안 소득을 늘리는 방식이 아니라, 돈이 빠져나가는 구조를 바꾸는 방식으로 【수치】를 만들었습니다. 지금은 그 방법을 체계화해서 알려드리는 일을 하고 있습니다.</p>
+<p>이 채널이 약속하는 건 딱 두 개의 숫자입니다.</p>
+<div class="ps">&quot;1년 1,000만&quot; / &quot;3년 1억&quot; 크게</div>
+<p>1년에 1천만 원. 3년에 1억.</p>
+<p>월급이 얼마인지는 묻지 않겠습니다. 이 채널에서 다루는 건 얼마를 버느냐가 아니라, 번 돈 중에 얼마가 남느냐이기 때문입니다. 월 200을 벌든 500을 벌든, 남는 돈이 0이면 결과는 같습니다.</p>
+<h3>1:30 · 짠테크의 정의</h3>
+<p>먼저 용어부터 정리하겠습니다.</p>
+<p>짠테크는 절약이 아닙니다.</p>
+<p>절약은 &#x27;덜 쓰는 행동&#x27;입니다. 짠테크는 &#x27;새는 돈을 막고, 남은 돈의 목적지를 정하는 시스템&#x27;입니다.</p>
+<div class="ps">절약 = 행동 / 짠테크 = 시스템</div>
+<p>이 차이가 왜 중요하냐. 절약은 의지력을 쓰고, 짠테크는 의지력을 쓰지 않기 때문입니다.</p>
+<p>의지력은 소모품입니다. 야근하고 밤 열 시에 들어온 날, 배달 앱을 이기는 사람은 없습니다. 그래서 의지력에 기대는 절약은 오래가지 못합니다. 제가 본 대부분의 실패는 방법이 틀려서가 아니라, 방법이 의지력을 요구했기 때문입니다.</p>
+<p>짠테크는 세 가지로 구성됩니다.</p>
+<div class="ps">세 항목 순차 등장</div>
+<p>첫째, 고정비 진단. 매달 자동으로 나가는 돈이 정확히 얼마인지 아는 것.</p>
+<p>둘째, 통장 시스템. 돈이 들어오는 순간 갈 곳이 정해져 있는 것.</p>
+<p>셋째, 시드머니 목표. 왜 모으는지, 얼마까지 모으는지가 숫자로 있는 것.</p>
+<p>이 세 가지가 갖춰지면, 커피를 마시든 배달을 시키든 돈은 모입니다. 반대로 이 세 가지가 없으면, 커피를 끊어도 돈은 안 모입니다. 끊은 커피값이 다른 데로 흘러갈 뿐입니다.</p>
+<p>아까 말씀드린 &#x27;세 군데 구멍&#x27;이 뭔지 감이 오실 겁니다. 변동비가 아닙니다. 고정비입니다. 구체적인 항목은 잠시 후에 숫자와 함께 보여드리겠습니다.</p>
+<h3>3:00 · 왜 1억이 아니라 1천만 원부터인가</h3>
+<p>왜 1억이 아니라 1천만 원부터 말하는지 설명드리겠습니다.</p>
+<p>1천만 원은 투자 시드라고 하기엔 작은 돈입니다. 이걸로 뭘 굴려도 큰 수익은 안 나옵니다.</p>
+<p>그런데 1천만 원을 모아본 사람과 못 모아본 사람은, 완전히 다른 재정 구조를 갖고 있습니다.</p>
+<div class="ps">&quot;1,000만 원 = 증명서&quot;</div>
+<p>1천만 원은 돈이 아니라 증명서입니다. &#x27;나는 돈이 모이는 구조를 가진 사람이다&#x27;라는 증명. 이 증명이 없는 상태에서 투자 공부를 하는 건, 면허 없이 자동차 카탈로그를 보는 것과 같습니다. 재밌기는 한데 어디로도 못 갑니다.</p>
+<p>숫자로 쪼개보겠습니다.</p>
+<div class="ps">계산 순차 표시</div>
+<p>1천만 원을 12개월로 나누면, 월 84만 원입니다.</p>
+<p>84만 원을 30일로 나누면, 하루 2만 7천 원입니다.</p>
+<p>하루 2만 7천 원. 이게 어디서 나오느냐. 커피 두 잔 참아서 나오는 돈이 아닙니다. 고정비에서 나옵니다.</p>
+<p>이제 세 군데를 공개하겠습니다.</p>
+<div class="ps">1. 통신비</div>
+<p>첫째, 통신비입니다. 5G 무제한 요금제를 쓰면서 실제 데이터는 그 절반도 안 쓰는 분들이 많습니다. 사용량에 맞는 요금제, 혹은 알뜰폰으로 옮기면 한 사람당 월 3만 원에서 5만 원이 차이 납니다. 가족 회선까지 합치면 더 커집니다.</p>
+<div class="ps">2. 보험료</div>
+<p>둘째, 보험료입니다. 사회초년생 때 지인 소개로 가입한 보험, 보장 내용도 모른 채 매달 10만 원, 20만 원씩 나가는 경우를 정말 많이 봅니다. 보험이 나쁘다는 게 아닙니다. 내가 뭘 사고 있는지 모른 채 돈이 나가는 게 문제입니다.</p>
+<div class="ps">3. 구독·자동결제</div>
+<p>셋째, 구독료와 자동결제입니다. OTT, 음악, 멤버십, 앱 유료 기능. 하나하나는 만 원 안팎이라 신경을 안 씁니다. 그런데 합쳐 보면 5만 원, 많게는 10만 원이 넘는 분들이 있습니다. 그리고 그중 절반은 지난달에 한 번도 안 열어봤을 겁니다.</p>
+<div class="ps">합계 20~40만 원</div>
+<p>이 세 가지만 정리해도 월 20만 원에서 40만 원이 나옵니다. 1천만 원 목표의 30에서 50퍼센트가 여기서 나오는 겁니다. 의지력 하나도 안 쓰고요.</p>
+<p>나머지는 통장 시스템이 만듭니다. 그 얘기를 지금부터 하겠습니다.</p>
+<h3>5:00 · 1천만 원을 만드는 3단계</h3>
+<p>1천만 원은 세 단계로 만듭니다. 진단, 시스템, 방어. 오늘은 구조만 말씀드리고, 각 단계의 실행 기준은 다음 영상들에서 하나씩 다루겠습니다.</p>
+<div class="ps">1단계 진단</div>
+<p>1단계, 진단입니다.</p>
+<p>카드사 앱이나 홈페이지에서 최근 3개월 결제 내역을 내려받습니다. 그리고 딱 하나만 표시합니다. 매달 같은 금액이 같은 날짜에 나가는 항목. 그게 고정비의 전체 목록입니다.</p>
+<p>이걸 처음 해보신 분들은 대부분 같은 반응을 보입니다. &quot;이게 이렇게 많았나.&quot; 네, 원래 그렇습니다. 고정비는 나가는 순간 눈에 안 보이도록 설계돼 있으니까요.</p>
+<div class="ps">2단계 시스템 — 통장 3개 도식</div>
+<p>2단계, 시스템입니다.</p>
+<p>통장을 세 개로 나눕니다. 월급통장, 생활비통장, 모으는통장.</p>
+<p>월급통장은 거쳐 가는 곳입니다. 월급이 들어오는 당일, 모으는통장으로 먼저 자동이체가 나갑니다. 그다음 생활비통장으로 정해진 금액이 갑니다. 이 순서가 전부입니다.</p>
+<p>남는 돈을 저축하는 게 아닙니다. 저축하고 남는 돈으로 사는 겁니다. 문장 순서를 바꾼 것뿐인데, 결과는 완전히 달라집니다. 왜냐하면 두 번째 방식에는 의지력이 들어갈 자리가 없기 때문입니다.</p>
+<div class="ps">3단계 방어</div>
+<p>3단계, 방어입니다.</p>
+<p>저는 무지출 챌린지를 권하지 않습니다. 실패 확률이 높고, 실패한 다음 날 보상 소비가 따라옵니다. 결과적으로 안 한 것보다 못한 경우가 많습니다.</p>
+<p>대신 &#x27;무결제 카테고리&#x27;를 한 개 정합니다. 편의점이든, 택시든, 배달이든. 전부를 끊는 게 아니라 하나만 끊습니다. 하나는 지킬 수 있고, 지킨 경험이 다음 하나를 만듭니다.</p>
+<p>이 세 단계가 돌아가기 시작하면, 1년 1천만 원은 목표가 아니라 결과가 됩니다.</p>
+<h3>7:00 · 1천만 원에서 1억까지, 3년 로드맵</h3>
+<p>이제 1억 얘기를 하겠습니다.</p>
+<div class="ps">3년 로드맵 한 장</div>
+<p>1년차는 &#x27;막는 짠테크&#x27;입니다. 구조를 만들고, 1천만 원을 모읍니다.</p>
+<p>2년차는 &#x27;버는 짠테크&#x27;입니다. 소득 파이프를 하나 추가합니다. 부업이든, 이직이든, 자격이든. 누적 4천만 원이 목표입니다.</p>
+<p>3년차는 &#x27;불리는 짠테크&#x27;입니다. 2년 동안 만든 시드를 굴립니다. 여기서 1억에 도달합니다.</p>
+<p>여기서 하나 솔직하게 말씀드려야 합니다.</p>
+<div class="ps">84만 × 36개월 = 3,024만</div>
+<p>월 84만 원 저축만으로 3년에 1억은 안 됩니다. 계산하면 3천만 원입니다. 나머지 7천만 원은 소득을 늘리고 운용하는 데서 나옵니다. 이걸 숨기고 &quot;짠테크만 하면 1억&quot;이라고 말하는 건 거짓말입니다.</p>
+<p>그런데 순서가 중요합니다. 1년차에 구조를 만들지 않은 채 소득만 늘리면, 지출이 같이 늘어납니다. 월급이 올라도 남는 돈이 그대로인 분들이 그래서 생깁니다. 구조가 먼저고, 소득은 그 구조 위에 얹는 겁니다.</p>
+<p>이 채널은 그 순서대로 갑니다. 1년차 영상부터 시작합니다.</p>
+<h3>8:30 · 오늘의 실행 과제</h3>
+<p>영상만 보고 끝내면 아무것도 안 바뀝니다. 오늘 하나만 하시면 됩니다.</p>
+<div class="ps">과제 텍스트</div>
+<p>지금 카드 앱을 여세요. 지난달 고정비 중에 금액이 가장 큰 세 개를 찾으세요. 그리고 항목과 금액을 댓글에 적어주세요.</p>
+<p>제가 직접 봅니다. 그리고 가장 많이 나온 항목부터 다음 영상에서 정리 기준을 알려드리겠습니다. 댓글이 곧 다음 강의 커리큘럼이 되는 겁니다.</p>
+<h3>9:20 · 다음 영상 예고 · 구독</h3>
+<p>다음 영상은 오늘 말씀드린 세 군데 구멍, 통신비·보험료·구독료를 어떤 순서로, 어떤 기준으로 정리하는지 다룹니다. 제가 실제로 정리한 순서 그대로입니다.</p>
+<p>1년 1천만 원, 3년 1억. 이 두 숫자를 같이 만들어 갈 분들은 구독해 두시면 됩니다.</p>
+<p>뿌요였습니다.</p>
+<div class="ps">엔드 스크린 — 다음 영상 카드</div></div></div>
+<script>
+const P=document.getElementById('pr'),T=document.getElementById('pt');let sp=2,run=false,raf;
+const tick=()=>{if(run)T.scrollTop+=sp/2;raf=requestAnimationFrame(tick)};
+document.getElementById('tp').onclick=()=>{P.classList.add('on');T.scrollTop=0;run=false;cancelAnimationFrame(raf);tick()};
+document.getElementById('pc').onclick=()=>{P.classList.remove('on');run=false;cancelAnimationFrame(raf)};
+document.getElementById('pp').onclick=()=>run=!run;
+document.getElementById('sp').oninput=e=>sp=+e.target.value;
+document.getElementById('sz').oninput=e=>T.style.fontSize=e.target.value+'px';
+document.addEventListener('keydown',e=>{if(!P.classList.contains('on'))return;
+ if(e.code==='Space'){e.preventDefault();run=!run}
+ if(e.code==='ArrowUp'){sp=Math.min(8,sp+.5);document.getElementById('sp').value=sp}
+ if(e.code==='ArrowDown'){sp=Math.max(0,sp-.5);document.getElementById('sp').value=sp}
+ if(e.code==='Escape')document.getElementById('pc').click()});
+</script>
+</body></html>

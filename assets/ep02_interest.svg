@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" font-family="Pretendard, Apple SD Gothic Neo, Malgun Gothic, sans-serif">
+  <rect width="900" height="300" fill="#0F172A" rx="16"/>
+  <text x="450" y="40" text-anchor="middle" fill="#94A3B8" font-size="16">100일 뒤, 100만 원의 세 가지 값</text>
+  <g transform="translate(60,80)">
+    <rect width="240" height="180" rx="14" fill="#1E293B"/>
+    <text x="120" y="40" text-anchor="middle" fill="#94A3B8" font-size="14">① 이자 (연 3.7%, 세후)</text>
+    <text x="120" y="100" text-anchor="middle" fill="#F8FAFC" font-size="40" font-weight="700">약 4천 원</text>
+    <text x="120" y="150" text-anchor="middle" fill="#64748B" font-size="13">솔직한 숫자</text>
+  </g>
+  <g transform="translate(330,80)">
+    <rect width="240" height="180" rx="14" fill="#1E293B"/>
+    <text x="120" y="40" text-anchor="middle" fill="#94A3B8" font-size="14">② 같은 구조 1년</text>
+    <text x="120" y="100" text-anchor="middle" fill="#FDE68A" font-size="40" font-weight="700">365만 원</text>
+    <text x="120" y="150" text-anchor="middle" fill="#64748B" font-size="13">+ 고정비 정리 → 1천만</text>
+  </g>
+  <g transform="translate(600,80)">
+    <rect width="240" height="180" rx="14" fill="#1E293B"/>
+    <text x="120" y="40" text-anchor="middle" fill="#94A3B8" font-size="14">③ 연 7% · 30년 운용</text>
+    <text x="120" y="100" text-anchor="middle" fill="#F59E0B" font-size="40" font-weight="700">약 760만</text>
+    <text x="120" y="150" text-anchor="middle" fill="#64748B" font-size="13">20대의 100만 = 시간이 붙은 돈</text>
+  </g>
+</svg>

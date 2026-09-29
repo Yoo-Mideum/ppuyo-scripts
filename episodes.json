@@ -1,0 +1,55 @@
+{
+  "channel": "뿌요 — 짠테크로 1년 1천만, 3년 1억",
+  "rule": {
+    "shootOffset": 2,
+    "publishOffset": 10,
+    "syllablesPerMin": 300
+  },
+  "episodes": [
+    {
+      "n": 1,
+      "title": "짠테크로 1년 1천만, 3년 1억 — 뿌요의 로드맵",
+      "given": "2026-09-09",
+      "status": "대본 완료",
+      "hook": "커피 끊지 마세요. 배달도 시키셔도 됩니다.",
+      "file": "scripts/01_짠테크로_1년_1천만_3년_1억.md",
+      "memo": "【】 자기소개 수치 채우기"
+    },
+    {
+      "n": 2,
+      "title": "겨자씨 만들기: 생애 첫 적금, 100일에 100만 원",
+      "given": "2026-09-30",
+      "status": "대본 완료",
+      "hook": "이자 4천 원 받으려고 100일 동안 매일 만 원씩 넣으라고 하면, 하시겠습니까.",
+      "file": "scripts/02_겨자씨_100일_100만원.md",
+      "memo": "금리·상품 조건 촬영일에 앱에서 재확인",
+      "sources": [
+        [
+          "카카오뱅크 26주적금 상품 안내 (증액 구조·우대금리)",
+          "https://www.kakaobank.com/products/26weeks"
+        ],
+        [
+          "토스뱅크 굴비적금 (매일 저축·6개월 만기·월 30만 한도)",
+          "https://www.tossbank.com/product-service/savings/savings-gulbi"
+        ],
+        [
+          "은행연합회 소비자포털 적금금리 비교공시",
+          "https://portal.kfb.or.kr/compare/receiving_deposit_3.php"
+        ],
+        [
+          "적금 금리 순위 2026 — 기본금리 기준 (2026-09-28 조회: 카카오 3.75 / 케이뱅크 코드K 3.70)",
+          "https://www.easyzetec.com/blog/installment-savings-rate-ranking-2026-base-vs-max-rate"
+        ]
+      ]
+    },
+    {
+      "n": 3,
+      "title": "연쇄적금러 — 매주 적금 하나씩, 만기가 매주 돌아오는 구조",
+      "given": "2026-10-07",
+      "status": "시작 전",
+      "hook": "",
+      "file": "",
+      "memo": "2화 말미 예고 반영"
+    }
+  ]
+}

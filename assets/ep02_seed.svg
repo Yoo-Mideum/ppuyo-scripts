@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" font-family="Pretendard, Apple SD Gothic Neo, Malgun Gothic, sans-serif">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9CA3AF"/></marker></defs>
+  <rect width="900" height="260" fill="#0F172A" rx="16"/>
+  <text x="450" y="42" text-anchor="middle" fill="#94A3B8" font-size="16">겨자씨의 순서 — 앞 단계 없이는 다음 단계가 없다</text>
+  <g>
+    <circle cx="150" cy="150" r="52" fill="#FDE68A"/>
+    <text x="150" y="145" text-anchor="middle" font-size="22" font-weight="700" fill="#0F172A">100만</text>
+    <text x="150" y="170" text-anchor="middle" font-size="13" fill="#0F172A">100일 · 매일 1만</text>
+    <text x="150" y="228" text-anchor="middle" font-size="13" fill="#94A3B8">씨앗</text>
+  </g>
+  <line x1="215" y1="150" x2="340" y2="150" stroke="#9CA3AF" stroke-width="3" marker-end="url(#a)"/>
+  <text x="278" y="138" text-anchor="middle" font-size="13" fill="#CBD5E1">×10 · 1년</text>
+  <g>
+    <circle cx="450" cy="150" r="70" fill="#FBBF24"/>
+    <text x="450" y="145" text-anchor="middle" font-size="26" font-weight="700" fill="#0F172A">1천만</text>
+    <text x="450" y="172" text-anchor="middle" font-size="13" fill="#0F172A">고정비 정리 + 구조</text>
+    <text x="450" y="242" text-anchor="middle" font-size="13" fill="#94A3B8">묘목</text>
+  </g>
+  <line x1="530" y1="150" x2="655" y2="150" stroke="#9CA3AF" stroke-width="3" marker-end="url(#a)"/>
+  <text x="593" y="138" text-anchor="middle" font-size="13" fill="#CBD5E1">×10 · 3년</text>
+  <g>
+    <circle cx="765" cy="150" r="88" fill="#F59E0B"/>
+    <text x="765" y="145" text-anchor="middle" font-size="30" font-weight="700" fill="#0F172A">1억</text>
+    <text x="765" y="172" text-anchor="middle" font-size="13" fill="#0F172A">소득 파이프 + 운용</text>
+    <text x="765" y="255" text-anchor="middle" font-size="13" fill="#94A3B8">나무</text>
+  </g>
+</svg>
