@@ -12,6 +12,9 @@ GitHub Pages 배포. 새 회차 추가 순서:
 - 인포그래픽은 `assets/epNN_이름.svg` (viewBox 900×260~300, 배경 #0F172A, 강조 #F59E0B/#FDE68A) → `![설명](assets/epNN_이름.svg)`
 - 상단 `> ` 메모는 음절 계산 제외. 목표 2,800~3,100음절
 
+## 주제 후보
+- `topics.json` 에 3~20화 후보(단계별). 회차 확정 시 episodes.json으로 옮기고 topics 항목은 그대로 둔다(자동으로 "대본 완료" 표시).
+
 ## 페이지 규칙
 - 각 페이지 self-contained (CSS·JS 인라인, 외부는 구글 폰트만). 수정은 build.py의 CSS/템플릿을 통째로 다시 쓴다.
 - 촬영일(+2)·공개일(+10)은 build.py가 계산. status: 시작 전/대본 작성 중/대본 완료/촬영 완료/공개 완료

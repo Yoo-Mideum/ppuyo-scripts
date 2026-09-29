@@ -187,6 +187,40 @@ for e in D['episodes']:
     out.write_text(page, encoding='utf-8')
     e['_syl'], e['_min'] = syl, mins
 
+
+# ---- topics page ----
+T = json.load(open(ROOT/'topics.json', encoding='utf-8'))
+done = {e['n'] for e in D['episodes'] if e.get('file')}
+planned = {e['n']: e for e in D['episodes'] if not e.get('file')}
+sections = []
+for ph in T['phases']:
+    items = []
+    for it in ph['items']:
+        n = it['n']
+        tag = '<span class="badge s2">대본 완료</span>' if n in done else ('<span class="badge s1">다음 회차</span>' if n in planned else '')
+        items.append(f"""<div class="card">
+<div class="chips"><span class="n">{n}화 후보</span>{tag}</div>
+<div class="t">{html.escape(it['title'])}</div>
+<p class="hook">“{html.escape(it['hook'])}”</p>
+<div class="memo">{html.escape(it['note'])}</div>
+</div>""")
+    sections.append(f"<h2>{html.escape(ph['name'])}</h2>" + ''.join(items))
+extra = ''.join(f'<li>{html.escape(x)}</li>' for x in T.get('extra', []))
+topics_page = HEAD('뿌요 · 이후 대본 주제') + f"""
+<div class="wrap">
+<div class="topline"></div>
+<a class="back" href="../">← 대본 보드</a>
+<div class="head"><span>뿌요 유튜브</span><span>이후 대본 주제 후보</span></div>
+<h1>이후 대본 주제 20</h1>
+<p class="sub">{html.escape(T['intro'])}</p>
+{''.join(sections)}
+<h2>번외 후보</h2>
+<ul class="guide">{extra}</ul>
+<footer>뿌요 짠테크 유튜브 · 대본 보드</footer>
+</div></body></html>"""
+(ROOT/'topics').mkdir(exist_ok=True)
+(ROOT/'topics'/'index.html').write_text(topics_page, encoding='utf-8')
+
 # ---- hub ----
 nxt = None; cards = []
 for e in D['episodes']:
@@ -222,6 +256,7 @@ hub = HEAD('뿌요 대본 보드') + f"""
 <p class="sub">대본 제공 <b>수요일</b> → 촬영 <b>금요일</b> → 공개 <b>다음주 토요일</b>. 각 회차 카드에서 대본을 열고, 공개 후 “영상 링크 등록”으로 링크를 남겨주세요.</p>
 {hero}
 {''.join(cards)}
+<a class="card" href="topics/" style="text-decoration:none"><div class="chips"><span class="n">기획</span></div><div class="t">이후 대본 주제 20 →</div><div class="memo">1년차 막는 짠테크 → 2년차 버는 짠테크 → 3년차 불리는 짠테크 순서</div></a>
 <h2>가이드</h2>
 <ul class="guide">
 <li><b>톤</b> — 전문가 톤. 감탄사·'여러분'·'~잖아요' 금지. 짧은 단정형.</li>
