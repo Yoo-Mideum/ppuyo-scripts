@@ -44,12 +44,35 @@
     },
     {
       "n": 3,
-      "title": "연쇄적금러 — 매주 적금 하나씩, 만기가 매주 돌아오는 구조",
+      "title": "연쇄적금러 — 만기가 와도 돈이 사라지지 않는 구조",
       "given": "2026-10-07",
+      "status": "대본 완료",
+      "hook": "적금 만기일이 1년 중 가장 위험한 날입니다.",
+      "file": "scripts/03_연쇄적금러.md",
+      "memo": "2화 '매주 만기' 예고를 '4주 풍차 + 6개월마다 만기 주간'으로 정정하는 솔직 구간 포함. 금리·상품 조건 촬영일 재확인",
+      "sources": [
+        [
+          "KB 풍차돌리기 안내 — 정의·장단점",
+          "https://kbthink.com/saving-guide/rotation.html"
+        ],
+        [
+          "적금 풍차돌리기 12개월 시뮬 — 월 10만 시작 시 12개월째 월 120만, 실패 요인 3가지 (2026)",
+          "https://www.easyzetec.com/blog/savings-windmill-12-account-maturity-cashflow-2026"
+        ],
+        [
+          "카카오뱅크 26주적금 — 1천 원 시작 시 26주 증액 구조",
+          "https://www.kakaobank.com/products/26weeks"
+        ]
+      ]
+    },
+    {
+      "n": 4,
+      "title": "통신비·보험료·구독료 — 뿌요가 실제로 뜯어고친 순서",
+      "given": "2026-10-14",
       "status": "시작 전",
       "hook": "",
       "file": "",
-      "memo": "2화 말미 예고 반영"
+      "memo": "3화 말미 예고 반영. 1화 '세 군데 구멍' 실전편"
     }
   ]
 }

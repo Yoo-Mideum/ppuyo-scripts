@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" font-family="Pretendard, Apple SD Gothic Neo, Malgun Gothic, sans-serif">
+  <rect width="900" height="280" fill="#0F172A" rx="16"/>
+  <text x="450" y="40" text-anchor="middle" fill="#94A3B8" font-size="16">4주 풍차 — 통장은 4개, 넣는 돈은 그대로</text>
+  <line x1="80" y1="150" x2="820" y2="150" stroke="#334155" stroke-width="2"/>
+  <g font-size="13" fill="#CBD5E1" text-anchor="middle">
+    <g><circle cx="150" cy="150" r="30" fill="#F59E0B"/><text x="150" y="155" fill="#0F172A" font-weight="700" font-size="14">2호</text><text x="150" y="205">1주차 월</text></g>
+    <g><circle cx="350" cy="150" r="30" fill="#F59E0B"/><text x="350" y="155" fill="#0F172A" font-weight="700" font-size="14">3호</text><text x="350" y="205">2주차 월</text></g>
+    <g><circle cx="550" cy="150" r="30" fill="#F59E0B"/><text x="550" y="155" fill="#0F172A" font-weight="700" font-size="14">4호</text><text x="550" y="205">3주차 월</text></g>
+    <g><circle cx="750" cy="150" r="30" fill="#F59E0B"/><text x="750" y="155" fill="#0F172A" font-weight="700" font-size="14">5호</text><text x="750" y="205">4주차 월</text></g>
+  </g>
+  <text x="450" y="100" text-anchor="middle" fill="#FDE68A" font-size="15">각 통장 주 1만 7천 원 × 4 = 주 7만 원 = 하루 1만 원</text>
+  <text x="450" y="250" text-anchor="middle" fill="#94A3B8" font-size="13">1호(하루 1만) 유지 → 합계 하루 2만 원 · 6개월 뒤 4주 연속 만기 주간</text>
+</svg>
